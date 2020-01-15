@@ -61,21 +61,21 @@ export class AppComponent implements OnInit {
     this.checkLoginStatus();
     this.listenForLoginEvents();
 
-    this.swUpdate.available.subscribe(async res => {
-      const toast = await this.toastCtrl.create({
-        message: 'Update available!',
-        showCloseButton: true,
-        position: 'bottom',
-        closeButtonText: `Reload`
-      });
+    // this.swUpdate.available.subscribe(async res => {
+    //   const toast = await this.toastCtrl.create({
+    //     message: 'Update available!',
+    //     showCloseButton: true,
+    //     position: 'bottom',
+    //     closeButtonText: `Reload`
+    //   });
 
-      await toast.present();
+    //   await toast.present();
 
-      toast
-        .onDidDismiss()
-        .then(() => this.swUpdate.activateUpdate())
-        .then(() => window.location.reload());
-    });
+    //   toast
+    //     .onDidDismiss()
+    //     .then(() => this.swUpdate.activateUpdate())
+    //     .then(() => window.location.reload());
+    // });
   }
 
   initializeApp() {
